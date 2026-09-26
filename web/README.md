@@ -43,3 +43,4 @@ vercel --prod
 Or connect the GitHub repo directly at vercel.com/new — it auto-detects
 Next.js, no environment variables or database required (no persistence
 in this version; every request runs a fresh in-memory simulation).
+Deployed via Vercel + GitHub integration: 2026-09-26T20:22:42Z
