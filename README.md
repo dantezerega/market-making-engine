@@ -19,6 +19,7 @@ avellaneda-stoikov-mm/
 │   ├── sweep.py         # gamma sensitivity sweep
 │   └── plots.py         # all charts
 ├── main.py              # end-to-end runner: calibrate -> run AS -> run naive -> metrics -> sweep -> plots
+├── web/                 # interactive Next.js/TypeScript port — deployable to Vercel, see web/README.md
 └── output/              # generated PNGs
 ```
 
@@ -32,6 +33,12 @@ python main.py
 
 Prints a full text report (calibration, both sessions' metrics, gamma
 sweep table) and writes six PNGs to `output/`.
+
+## Interactive web version
+
+`web/` is a full TypeScript port of the model + LOB simulator (parameter
+sliders, live charts, head-to-head metrics), deployable to Vercel with
+zero backend/database setup — see `web/README.md`.
 
 ---
 
