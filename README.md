@@ -8,6 +8,8 @@ Avellaneda-Stoikov (AS) quoting policy against a naive fixed-spread,
 no-inventory-skew baseline, on inventory risk, P&L decomposition, and
 adverse-selection markout.
 
+![Quotes and reservation price vs simulated mid-price path](output/01_quotes_vs_mid.png)
+
 ```
 avellaneda-stoikov-mm/
 ├── lob_sim/            # vendored LOB simulator (orderbook, orders, metrics, simulation) — untouched matching engine
@@ -215,6 +217,10 @@ differing spread width, over 2,000 ticks:
 | Markout @ 10 ticks | -3.6 | -6.8 |
 | Markout @ 100 ticks | -1.6 | +5.7 |
 
+![Inventory path over the session (AS vs naive)](output/02_inventory_path.png)
+
+![P&L decomposition: spread capture vs inventory mark-to-market](output/03_pnl_decomposition.png)
+
 **AS reduces inventory variance by ~98%** relative to the naive
 baseline at matched spread width, and turns a negative-P&L session
 into a positive one, at better risk-adjusted terms. The naive baseline
@@ -227,6 +233,8 @@ with the spread capture once you're carrying risk is.
 
 See `output/04_naive_vs_as.png` for the head-to-head inventory and P&L
 paths.
+
+![Naive vs Avellaneda-Stoikov: inventory and P&L paths](output/04_naive_vs_as.png)
 
 ---
 
@@ -246,6 +254,8 @@ short horizons, but the naive baseline's markout trends toward
 consistent with AS's inventory skew helping it mean-revert away from
 positions before adverse flow catches up, where the naive strategy
 just holds and gets run over.
+
+![Markout curves by horizon: AS vs naive](output/06_markout_curves.png)
 
 ---
 
@@ -269,6 +279,8 @@ This is the chart that shows gamma isn't a "plug in a number and
 forget it" parameter — it's a genuine dial trading off inventory risk
 against P&L, with an interior optimum set by the specific vol/flow
 regime you calibrated against.
+
+![Gamma sweep: inventory variance and risk-adjusted P&L vs risk aversion](output/05_gamma_sweep.png)
 
 ---
 
